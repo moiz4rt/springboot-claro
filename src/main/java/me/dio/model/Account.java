@@ -16,7 +16,7 @@ public class Account
 	private String number;
 	private String agencv;
 
-	@Column(precision = 2, scale = 13)
+	@Column(precision = 13, scale = 2)
 	private BigDecimal balance;
 
 	@Column(name = "additional_limit", precision = 2, scale = 13)
