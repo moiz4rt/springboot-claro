@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService
     @Override
     public User findById(Long id)
     {
-        return userRepository.findById(id).orElseThrow(NoSuchElementException);
+        return userRepository.findById(id).orElseThrow(() -> new NoSuchElementException("User not found with id: " + id));
     }
 
     @Override
@@ -28,7 +28,8 @@ public class UserServiceImpl implements UserService
     {
         if(userToCreate.getId() != null && userRepository.existsById(userToCreate.getId()))
                 {
-                    throw new IllegalArgumentException("This user ID already exists!);
+                    throw new IllegalArgumentException("This user ID already exists!");
+                }
         return userRepository.save(userToCreate);
     }
 }
