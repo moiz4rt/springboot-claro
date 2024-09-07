@@ -75,6 +75,11 @@
                     <arg>--add-opens</arg>
                     <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
                 </compilerArgs>
+				<archive>
+                    <manifestEntries>
+                        <Main-Class>com.example.MainClass</Main-Class>
+                    </manifestEntries>
+                </archive>
             </configuration>
         </plugin>
 			<plugin>
